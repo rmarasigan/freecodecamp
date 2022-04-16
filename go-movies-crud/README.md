@@ -13,7 +13,7 @@ go: creating new go.mod: module github.com/development/go-movies-crud
 ```bash
 dev@dev:~/go/src/github.com/development/go-movies-crud$ go build
 dev@dev:~/go/src/github.com/development/go-movies-crud$ go run main.go
-dev@dev:~/go/src/github.com/development/go-movies-crud$ ccurl -X POST -d '{"isbn":"4434527","title":"Movie Seven","director":{"firstname":"akhil","lastname":"sharma"}}' -H 'Content-Type: application/json' http://localhost:8000/movies
+dev@dev:~/go/src/github.com/development/go-movies-crud$ curl -X POST -d '{"isbn":"4434527","title":"Movie Seven","director":{"firstname":"akhil","lastname":"sharma"}}' -H 'Content-Type: application/json' http://localhost:8000/movies
 dev@dev:~/go/src/github.com/development/go-movies-crud$ curl -X PUT -d '{"isbn":"442424","title":"Movie Seven","director":{"firstname":"john","lastname":"mayer"}}' -H 'Content-Type: application/json' http://localhost:8000/movies/74941318
 dev@dev:~/go/src/github.com/development/go-movies-crud$ curl -X DELETE http://localhost:8000/movies/74941318
 ```
