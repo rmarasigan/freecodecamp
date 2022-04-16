@@ -206,6 +206,6 @@ func main() {
 		return ctx.Status(http.StatusOK).JSON("record deleted")
 	})
 
-	// Starts the server. If it does not server, it will log the error.
+	// Starts the server. If it does not start the server, it will log the error.
 	log.Fatal(app.Listen(":3000"))
 }
