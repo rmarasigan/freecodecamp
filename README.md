@@ -52,13 +52,13 @@ This is free software; see the source for copying conditions. There is NO warran
 
 # Table of Contents
 ### Go Lang
-1. [go-server](/go-server/README.md)
-2. [go-movies-crud](/go-movies-crud/README.md)
-3. [go-bookstore](/go-bookstore/README.md)
-4. [slack-age-bot](/slack-bot-age/README.md)
-5. [email-checker-tool](/email-checker-tool/README.md)
-6. [lambda-basics](/lambda-basics/README.md)
-7. [go-fiber-crm-basic](/go-fiber-crm-basic/README.md)
+1. [go-server](/go-server/)
+2. [go-movies-crud](/go-movies-crud/)
+3. [go-bookstore](/go-bookstore/)
+4. [slack-age-bot](/slack-bot-age/)
+5. [email-checker-tool](/email-checker-tool/)
+6. [lambda-basics](/lambda-basics/)
+7. [go-fiber-crm-basic](/go-fiber-crm-basic/)
 
 
 # Reference
