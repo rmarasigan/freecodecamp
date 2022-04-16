@@ -59,6 +59,7 @@ This is free software; see the source for copying conditions. There is NO warran
 5. [email-checker-tool](/email-checker-tool/)
 6. [lambda-basics](/lambda-basics/)
 7. [go-fiber-crm-basic](/go-fiber-crm-basic/)
+8. [go-fiber-mongo-hrms](/go-fiber-mongo-hrms/)
 
 
 # Reference
