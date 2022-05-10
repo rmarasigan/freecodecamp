@@ -6,6 +6,7 @@ Please make sure there's a GO lang installed in your machine. If you're not fami
 ### Golang Tutorial for Beginners
 1. [Variables](golang-beginners/variables/README.md)
 2. [Primitives](golang-beginners/primitives/README.md)
+3. [Constants](golang-beginners/constants/README.md)
 
 ### Go Lang
 1. [go-server](/go-server/)
