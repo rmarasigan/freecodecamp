@@ -254,7 +254,7 @@ func main() {
 }
 ```
 
-What happens if I need to get the real part or the imaginary part? If you run this on the `complex64`, then the real and the imaginary function are gong to give you `float32`. We see that we get `float32`.
+What happens if I need to get the real part or the imaginary part? If you run this on the `complex64`, then the real and the imaginary function are going to give you `float32`. We see that we get `float32`.
 ```go
 func main() {
   var n complex64 = 1 + 2i
@@ -292,7 +292,7 @@ func main() {
 }
 ```
 
-Now, strings are generally immutable. So while I can inspec the second character, I can't do something like this. It will return an error of `cannot assign to s[2]` and `cannot use "u" (type string) as type byte in assignment`.
+Now, strings are generally immutable. So while I can inspect the second character, I can't do something like this. It will return an error of `cannot assign to s[2]` and `cannot use "u" (type string) as type byte in assignment`.
 ```go
 func main() {
    s := "this is a string"
@@ -325,7 +325,7 @@ Why would you use this one? A lot of the functions that we're going to use in Go
 A rune is a little bit different than a string type. A string type represent any UTF-8 character, a rune represents any UTF-32 character. UTF-32 is a little bit of a weird because while any character in UTF-32 can be up to 32 bits long, it doesn't have to be 32 bits long. For example, any UTF-8 character, which is 8 bits long, is a valid UTF-32 character.
 
 
-If we're declaring a stirng we use a `"` double quoutes. When we're declaring a single rune, we use `'` single quotes. But if you run this application, it will return `97, int32`. The reason for this is because runes are just type alias for int32. So strings can be converted back and forth between collection of bytes. With runes, they are a true type alias. When you are talking about rune, it is the same as talking about an int32.
+If we're declaring a string we use a `"` double quotes. When we're declaring a single rune, we use `'` single quotes. But if you run this application, it will return `97, int32`. The reason for this is because runes are just type alias for int32. So strings can be converted back and forth between collection of bytes. With runes, they are a true type alias. When you are talking about rune, it is the same as talking about an int32.
 ```go
 func main() {
    r := 'a'
