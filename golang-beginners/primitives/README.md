@@ -1,3 +1,47 @@
+<style>
+   /* Style the list */
+   ul.breadcrumb {
+      padding: 10px 16px;
+      list-style: none;
+      background-color: #FACC15;
+   }
+
+   /* Display list items side by side */
+   ul.breadcrumb li {
+      display: inline;
+      font-size: 18px;
+   }
+
+   /* Add a slash symbol (/) before/behind each list item */
+   ul.breadcrumb li+li:before {
+      padding: 8px;
+      color: black;
+      content: "/\00a0";
+   }
+
+   /* Add a color to all links inside the list */
+   ul.breadcrumb li a {
+      color: #000000;
+      font-weight: bold;
+      text-decoration: none;
+   }
+
+   /* Add a color on mouse-over */
+   ul.breadcrumb li a:hover {
+      color: #01447E;
+      text-decoration: none;
+   }
+</style>
+<ul class="breadcrumb">
+   <li>
+      <a href="https://github.com/rmarasigan/freecodecamp#golang-tutorial-for-beginners">Golang Beginners</a>
+   </li>
+   <li>
+      <a href="#">Primitives</a>
+   </li>
+</ul>
+<br>
+
 # Primitives
 
 ### Agenda
