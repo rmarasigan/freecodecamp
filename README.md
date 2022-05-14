@@ -1,5 +1,5 @@
 # Freecodecamp
-Please make sure there's a GO lang installed in your machine. If you're not familiar with GO lang, please go over to their [page](https://go.dev/doc/tutorial/getting-started) or you could visit [**Tour of Go**](https://go.dev/tour/welcome/1). To **download and install**, please follow the instructions describe [here](https://go.dev/doc/install). For a detailed installation for Linux, please go to this [page](https://github.com/rmarasigan/notes/blob/master/go-lang/Installation.md).
+Please make sure there's a GO lang installed in your machine. If you're not familiar with GO lang, please go over to their [page](https://go.dev/doc/tutorial/getting-started) or you could visit [**Tour of Go**](https://go.dev/tour/welcome/1). To **download and install**, please follow the instructions describe [here](https://go.dev/doc/install). For a detailed installation for Linux, please go to this [**page**](https://github.com/rmarasigan/notes/blob/master/go-lang/Installation.md).
 
 # Table of Contents
 
@@ -7,6 +7,7 @@ Please make sure there's a GO lang installed in your machine. If you're not fami
 1. [Variables](golang-beginners/variables/README.md)
 2. [Primitives](golang-beginners/primitives/README.md)
 3. [Constants](golang-beginners/constants/README.md)
+4. [Arrays and Slices](golang-beginners/arrays-slices/README.md)
 
 ### Go Lang
 1. [go-server](/go-server/)
