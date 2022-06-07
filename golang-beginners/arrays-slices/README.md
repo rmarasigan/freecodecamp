@@ -132,3 +132,161 @@ func main() {
 Arrays are very powerful and there's a lot of use cases where you can use arrays very efficiently. However, the fact that they have a fixed size that has to be known at compile time definitely limits their usefulness. In Go, the most common use case for using arrays is to back something called a **slice**.
 
 ## Slice
+A slice is initialzied as a literal by just using the square brackets, the type of data we want to store and then in the curly braces we can pass in the initialized data. It looks exactly like an array and as a matter of fact, everything we can do with an array we can do with a slice as well, with one or two exceptions.
+```go
+func main() {
+   a := []int{1, 2, 3}
+   fmt.Println(a)                      // Output: [1, 2, 3]
+   fmt.Printf("Length: %v\n", len(a))  // Output: Length: 3
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 3
+}
+```
+
+Slices are naturally what are called **reference types**. So they refer to the same underlying data. If we run this, we see that `a` and `b` are actually pointing to the same underlying array and when we change the value in `b`, we get a change in the value in `a`. This is one thing that you're going to have to keep in mind when you're working with slices. If you got multiple slices pointing to the same underlying data, you have to keep in mind, if one of those slices changes the underlying data, it could have an impact somewhere else in your application.
+```go
+func main() {
+   a := [...]int{1, 2, 3}
+   b := a
+   b[1] = 5
+   fmt.Println(a)                      // Output: [1, 5, 3]
+   fmt.Println(b)                      // Output: [1, 5, 3]
+   fmt.Printf("Length: %v\n", len(a))  // Output: Length: 3
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 3
+}
+```
+
+You can see below that we're creating a slice that has the values one through ten and then which is`a`. Here's a detailed explanation of each slices.
+* Slice `b` is using a bracket with the colon in between (`[:]`). What that is going to do is, it is basically going to crete a slice of all the elements of what it is referring to. So it's going to create a slice of all the elements of `a`.
+* Slice `c` is going to start with the 3rd element of the parent and copy all the values after that. That is going to start with the element with index three, which is, of course the fourth element and every element after that. So it is going to copy four through 10 into the slice `c`.
+* Slice `d` is going to copy everything up to the sixth element and that is the literal sixth element not element number seven. That is actually the sixt element which is going to have the index five.
+* Slice `e` is going to copy the fourth element through the sixth element into our new slice.
+```go
+func main() {
+   a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9 ,10}
+   b := a[:]   // Slice of all elements
+   c := a[3:]  // Slice from 4th element to end
+   d := a[:6]  // Slice of first 6 elements
+   e := a[3:6] // Slice the 4th, 5th, and 6th elements
+   fmt.Println(a) // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+   fmt.Println(b) // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+   fmt.Println(c) // Output: [4, 5, 6, 7, 8, 9, 10]
+   fmt.Println(d) // Output: [1, 2, 3, 4, 5, 6]
+   fmt.Println(e) // Output: [4, 5, 6]
+}
+```
+
+That can be a little bit confusing because the first number has a slightly different meaning than the second number. Basically, the first number is inclusive and the second number is exclusive (`[inclusive:exclusive]`). One thing to keep in mind, remember that all of these operations point at the same underlying data. So if you take element five on slice `a` and change that value, notice all of them changed their value because they're all pointing to the same underlying array. So each one of these operations includes the fifth index in their results and each one of those gets updated to the value of 42.
+```go
+func main() {
+   a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9 ,10}
+   b := a[:]   // Slice of all elements
+   c := a[3:]  // Slice from 4th element to end
+   d := a[:6]  // Slice of first 6 elements
+   e := a[3:6] // Slice the 4th, 5th, and 6th elements
+   a[5] = 42
+   fmt.Println(a) // Output: [1, 2, 3, 4, 5, 42, 7, 8, 9, 10]
+   fmt.Println(b) // Output: [1, 2, 3, 4, 5, 42, 7, 8, 9, 10]
+   fmt.Println(c) // Output: [4, 5, 42, 7, 8, 9, 10]
+   fmt.Println(d) // Output: [1, 2, 3, 4, 5, 42]
+   fmt.Println(e) // Output: [4, 5, 42]
+}
+```
+
+Another thing to know about these slicing operations is they can work with slices like we're doing but they can also work with arrays. If you put the three dots between the brackets (`[...]`), it is actually going to turn `a` into an array. We will also get the same result and that is because slicing operations can have as their source, an array or a slice. Whatever type of data you are working with, as long as it is done of those two, you can use these slicing operations.
+```go
+func main() {
+   a := [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9 ,10}
+   b := a[:]   // Slice of all elements
+   c := a[3:]  // Slice from 4th element to end
+   d := a[:6]  // Slice of first 6 elements
+   e := a[3:6] // Slice the 4th, 5th, and 6th elements
+   a[5] = 42
+   fmt.Println(a) // Output: [1, 2, 3, 4, 5, 42, 7, 8, 9, 10]
+   fmt.Println(b) // Output: [1, 2, 3, 4, 5, 42, 7, 8, 9, 10]
+   fmt.Println(c) // Output: [4, 5, 42, 7, 8, 9, 10]
+   fmt.Println(d) // Output: [1, 2, 3, 4, 5, 42]
+   fmt.Println(e) // Output: [4, 5, 42]
+}
+```
+
+Now, the last way that we have available to us to create a slice is using what is called the `make` function and that is a built-in function that we have to work with. This takes two or three arguments. So let us start with two arguments. In here we are going to make a slices of intergers. The second argument is going to be the length of the slice.
+```go
+func main() {
+   a := make([]int, 3)
+   fmt.Println(a)                      // Output: [0, 0, 0]
+   fmt.Printf("Length: %v\n", len(a))  // Output: Length: 3
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 3
+}
+```
+
+When I create a slice, everything gets set to the zero value which is what we always expect in Go to happen. Everytime we initialize a variable, we expect it to be initialzied to zero values and that is true for slices just like it is true for primitives. Now, we can also pass the third argument to the make function and that is going to set the capacity. Keep in mind, the slice has an underlying array and they don't have to be equivalent. If we run this, we see that we've created a slice of length three, it got three elements in it, but the underlying array has 100 elements in int.
+```go
+func main() {
+   a := make([]int, 3, 100)
+   fmt.Println(a)                      // Output: [0, 0, 0]
+   fmt.Printf("Length: %v\n", len(a))  // Output: Length: 3
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 100
+}
+```
+
+Why would we do that? Well, the reason is because unlike arrays, slices don't have to have a fixed size over their entire life. We can actually add elements and remove elements from them. If we want to add an element to this slice, we can use the built-in `append` function. It takes two or more arugments. The first is going to be the source slice that we're going to be working with and the second one the is an element that we want to add in it. On the second operation, we notice that the capacity is two. What happened here is when we initialize a slice to the value `a`, Go assigned a memory location for the slice and since it didn't have to store anything, it basically created an underlying array of zero element for us. As soon as we added an element, it couldn't fit in a zero element array. So it had to assign an array for us. What Go does is it copies all of the existing elements to a new array that got a larger size. When we re-assigned, it actually did create a new array, this one has a capacity of two, and then put the value `1` into that array. However, as things get very large, these copy operations become very expensive and that is why we have that three parameter in `make` function. That way, if we know the capacity is going to be somewhere around 100 elements you can go ahead and start there. That way as you are appending elements and building up the slice, you are not constantly copying the underlying array around. 
+```go
+func main() {
+   a := []int{}
+   fmt.Println(a)                      // Output: []
+   fmt.Printf("Length: %V\n", len(a))  // Output: Length: 0
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 0
+   
+   a = append(a, 1)
+   fmt.Println(a)                      // Output: [1]
+   fmt.Printf("Length: %v\n", len(a))  // Output: Length: 1
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 2
+}
+```
+
+If you remember the append function can take two or more arguments, the reason for that is called **variadic function**. Everything after the first argument is going to be interpreted as a value to append to the slice passed in the first argument. Now the capacity is 8. Generally, once it fills up the underlying array with a slice, when you add the next element, it is going to create a new array and it is actually going to doubel the size from the previous array. If we start with an empty slice, we see that the array would initially be of size zero then we'll go to 2 4 8 16 32 and 64 elements. That is something to be aware of if you are just over one of those powers of two,  you can actually end up with a lot of memory consumed that you're never going to be using.
+```go
+func main() {
+   a := []int{}
+   fmt.Println(a)                      // Output: []
+   fmt.Printf("Length: %V\n", len(a))  // Output: Length: 0
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 0
+   
+   a = append(a, 1)
+   fmt.Println(a)                      // Output: [1]
+   fmt.Printf("Length: %V\n", len(a))  // Output: Length: 1
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 2
+
+   a = append(a, 2, 3, 4, 5)
+   fmt.Println(a)                      // Output: [1, 2, 3, 4, 5]
+   fmt.Printf("Length: %V\n", len(a))  // Output: Length: 5
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 8
+```
+
+One common situation you're going to run into is if you have a slice of elements and another slice of elements, and you want to concatenate them together, so you want to have another slice created that has all the elements of the first slice and all of the elements of the second slice. You can add a `...` dots after the clie, it is actually going to spread that slice out into individual arguments. It is basically going to take the slice and decompose it into something like this: `2, 3, 4, 5`.
+```go
+func main() {
+   a := []int{}
+   fmt.Println(a)                      // Output: []
+   fmt.Printf("Length: %V\n", len(a))  // Output: Length: 0
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 0
+   
+   a = append(a, 1)
+   fmt.Println(a)                      // Output: [1]
+   fmt.Printf("Length: %V\n", len(a))  // Output: Length: 1
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 2
+
+   a = append(a, []int{2, 3, 4, 5}...)
+   fmt.Println(a) // Output: [1, 2, 3, 4, 5]
+   fmt.Printf("Length: %V\n", len(a)) // Output: Length: 5
+   fmt.Printf("Capacity: %v\n" cap(a)) // Output: Capacity: 8
+```
+
+Some other common operations that might do with slices are **stack operations**. Let's say that we're treating our slices a stack and we want to be able to push elements onto the stack and pop elements off of the stack. With the `append` function it is going to allow us to push element onto the stack. For popping elements, we can do what is called a **shift operations** which means we want to remove the first element from the slice. So slice `b is going to create a new slice that starts at index one which has the value two and takes everything else from that. If you want to trim an element off the end then you are going to have to use a different syntax. So we want all the initial elements and we are going to start with a colon between the brackets (`[:]`) and then use the `len` operation to figure out the length of the slice. Remember that it is going to return a number that is too large. So slice `c` will return a value of `[1, 2, 3, 4]`.
+```go
+func main() {
+   a := []int{1, 2, 3, 4, 5}
+   b := a[1:]
+   fmt.Println(b)    // Output: [2, 3, 4, 5]
+   c := a[:len(a)-1] // Output: [1, 2, 3, 4]
+```
