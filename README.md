@@ -8,6 +8,7 @@ Please make sure there's a GO lang installed in your machine. If you're not fami
 2. [Primitives](golang-beginners/primitives/README.md)
 3. [Constants](golang-beginners/constants/README.md)
 4. [Arrays and Slices](golang-beginners/arrays-slices/README.md)
+5. [Maps and Structs](golang-beginners/maps-structs/README.md)
 
 ### Go Lang
 1. [go-server](/go-server/)
