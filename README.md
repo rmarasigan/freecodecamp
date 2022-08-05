@@ -26,7 +26,10 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 8. [go-fiber-mongo-hrms](/go-fiber-mongo-hrms/)
 9. [go-serverless](/go-serverless/)
 
+### Terraform
+1. [Terraform EC2 AWS](/terraform/tf-ec2-aws/)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
 2. [Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU)
+3. [Terraform Course - Automate your AWS cloud infrastructure](https://www.youtube.com/watch?v=SLB_c_ayRMo)
