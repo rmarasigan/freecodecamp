@@ -1,5 +1,10 @@
 # Freecodecamp
-Please make sure there's a GO lang installed in your machine. If you're not familiar with GO lang, please go over to their [page](https://go.dev/doc/tutorial/getting-started) or you could visit [**Tour of Go**](https://go.dev/tour/welcome/1). To **download and install**, please follow the instructions describe [here](https://go.dev/doc/install). For a detailed installation for Linux, please go to this [**page**](https://rmarasigan.github.io/notes/notes/go-lang/Installation.html).
+
+### Golang
+Please make sure there's a GO lang installed on your machine. If you're not familiar with GO lang, please go over to their [page](https://go.dev/doc/tutorial/getting-started) or you could visit [**Tour of Go**](https://go.dev/tour/welcome/1). To **download and install**, please follow the instructions described [here](https://go.dev/doc/install). For a detailed installation for Linux, please go to this [**page**](https://rmarasigan.github.io/notes/notes/go-lang/Installation.html).
+
+### Terraform
+Please make sure you already have an AWS Account and AWS CLI configured. If your AWS CLI is still not configured, and is using a Linux machine, you could follow the steps [here](Installation.md#aws-cli). To **download and install** the Terraform, and you are using a Linux machine, please follow the instructions described [here](https://rmarasigan.github.io/notes/notes/terraform/installation.html). For a detailed installation in a different OS, please go to this [**page**](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 # Table of Contents
 
