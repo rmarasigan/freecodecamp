@@ -28,6 +28,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 
 ### Terraform
 1. [Terraform EC2 AWS](/terraform/tf-ec2-aws/)
+2. [Terraform Subnet within the VPC](/terraform/tf-vpc-aws/)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
