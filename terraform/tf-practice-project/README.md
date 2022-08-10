@@ -524,7 +524,16 @@ Apply complete! Resources: 9 added, 0 changed, 0 destroyed.
 ```
 
 
-## Connecting to the Web Server
+## Web Server HTTP Connection
+To test the HTTP request, you can access the **Public IPv4 address** of the `web-server`. Select the `web-server` and there you will see the information of the said instance including the public and private IPv4 address.
+
+![tf-vpc-ec2-web-server](../../assets/img/tf-vpc-ec2-web-server.png)
+
+Copy the **Public IPv4 address**, open a new tab, paste it in, and hit enter. Remember to access it using **HTTP** and not **HTTPS**, as it is not accessible through the same public IP using HTTPS. It might be your browser was defaulted on opening the public IP on HTTPS (see the [Stack**Overflow** Amazon EC2 issue](https://stackoverflow.com/questions/26818456/amazon-ec2-not-working-when-accessing-through-public-ip)).
+
+![tf-vpc-web-server](../../assets/img/tf-vpc-web-server.png)
+
+## Web Server SSH Connection
 Since it has the public IP, we can actually SSH to it, and the way to do that, it is going to vary depending on what operating system you're on.
 
 ### Windows
@@ -535,7 +544,6 @@ So if you're on Windows, the first thing that you need to do is download a softw
 You can see there's PuTTY and PuTTYgen. The first thing that we need to do is to open up the PuTTygen. The reason we need to do this is because we have a `.pem` file and PuTTy uses a `.ppk` file format. So we have to convert the `.pem` file to the right format to be able to use it on a Windows machine. Hit on the **Load** button and choose the **`All Files (*.*)`** so that you can get your `.pem` file and hit **Open**.
 
 ![tf-windows-putty-load](../../assets/img/tf-windows-putty-load.png)
-
 
 Then all we need to do is to select the **Save private key** and it is going to give you a warning. Go ahead and just hit **Yes**.
 
@@ -559,7 +567,6 @@ At this point, you should be logged in using PuTTy. You know we're on a Linux ma
 The first thing that you need to do is go to your web browser and go to the **AWS EC2 Instances** section. Select the `web-server` and then hit **Connect**.
 
 ![tf-vpc-ec2-linux](../../assets/img/tf-vpc-ec2-linux.png)
-
 
 This command line means that we are going to set the permissions to the correct values and only the `User` or `Owner` has the read permission.
 ```bash
