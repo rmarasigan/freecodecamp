@@ -6,6 +6,14 @@ Please make sure there's a GO lang installed on your machine. If you're not fami
 ### Terraform
 Please make sure you already have an AWS Account and AWS CLI configured. If your AWS CLI is still not configured, and is using a Linux machine, you could follow the steps [here](Installation.md#aws-cli). To **download and install** the Terraform, and you are using a Linux machine, please follow the instructions described [here](https://rmarasigan.github.io/notes/notes/terraform/installation.html). For a detailed installation in a different OS, please go to this [**page**](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
+#### Useful Commands
+* `terraform init`      initializes your Terraform
+* `terraform fmt`       format your Terraform configuration file
+* `terraform validate`  validates your Terraform configuration file
+* `terraform plan`      shows you the blueprint of your resources
+* `terraform apply`     deploys resources on your specific provider
+* `terraform destroy`   destroys all the resources
+
 # Table of Contents
 
 ### Golang Tutorial for Beginners
