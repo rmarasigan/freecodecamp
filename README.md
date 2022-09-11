@@ -44,7 +44,17 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 7. [Terraform Resources](/terraform/tf-resources/)
 8. [Terraform Variables](/terraform/tf-variables/)
 
+### JavaScript
+1. Basic JavaScript
+   1. [Comment](/javascript/basic-comment-variables.md#comment)
+   2. [Variables](/javascript/basic-comment-variables.md#variables)
+   3. [`var`, `let`, `const`](/javascript/basic-var-let-const.md)
+   4. [Strings](/javascript/basic-string.md)
+   5. [Numbers](/javascript/basic-numbers.md)
+   6. [Arrays](/javascript/basic-array.md)
+
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
 2. [Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU)
 3. [Terraform Course - Automate your AWS cloud infrastructure](https://www.youtube.com/watch?v=SLB_c_ayRMo)
+4. [JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
