@@ -52,6 +52,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    4. [Strings](/javascript/basic-string.md)
    5. [Numbers](/javascript/basic-numbers.md)
    6. [Arrays](/javascript/basic-array.md)
+   7. [Functions](/javascript/basic-functions.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
