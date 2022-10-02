@@ -57,6 +57,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    8. [Boolean](/javascript/basic-boolean.md)
    9. [`if` — `else if` — `else` Statements](/javascript/basic-if-else-if.md)
    10. [`switch` Statements](/javascript/basic-swtich.md)
+   11. [Objects](/javascript/basic-objects.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
