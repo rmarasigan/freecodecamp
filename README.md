@@ -55,6 +55,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    6. [Arrays](/javascript/basic-array.md)
    7. [Functions](/javascript/basic-functions.md)
    8. [Boolean](/javascript/basic-boolean.md)
+   9. [`if` — `else if` — `else` Statements](/javascript/basic-if-else-if.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
