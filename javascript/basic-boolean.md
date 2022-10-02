@@ -131,6 +131,15 @@ if (num > 10 || num < 5) {
 return "Yes";
 ```
 
+## Boolean Values from Functions
+Since `===` returns `true` or `false`, we can return the result of the comparison.
+
+```javascript
+function isEqual(a, b) {
+   return a === b;
+}
+```
+
 ## Great Read
 * [JavaScript booleans explained by going to court](https://www.freecodecamp.org/news/javascript-booleans-explained-by-going-to-court-a0ca1149a0dc/)
 * [JavaScript Booleans Explained – How to use Booleans in JavaScript](https://www.freecodecamp.org/news/booleans-in-javascript-explained-how-to-use-booleans-in-javascript/)
