@@ -145,7 +145,7 @@ const storage = {
 };
 
 storage.cabinet["top drawer"].folder_2; // secrets
-storage.drawer.drawer;                  // stapler
+storage.desk.drawer;                    // stapler
 ```
 
 ## Great Read
