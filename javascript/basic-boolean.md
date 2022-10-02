@@ -3,34 +3,16 @@
 
 **Note**: Boolean values are never written with quotes. The strings `"true"` and `"false"` are not Boolean and have no special meaning in JavaScript.
 
-## Conditional Logic with `if` Statements
-**`if`** statements are used to make decisions in code. The keyword `if` tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as *Boolean* conditions and they may only be `true` or `false`.
+Booleans are a primitive datatype commonly used in computer programming languages. By definition, a boolean has two possible values: `true` or `false`. In JavaScript, there is often implicit type coercion to boolean.
 
-When the condition evaluates to `true`, the program executes the statement inside the curly braces. When the Boolean condition evaluates to `false`, the statement inside the curly braces will not execute.
-
-Syntax:
+Example
 ```javascript
-if (true) {
-   // ... statement is executed ... //
+const x = "A string";
+
+if (x) {
+   console.log(x);
 }
 ```
-
-Example:
-```javascript
-
-function printMessage(condition) {
-   if (condition) {
-      return "It was true";
-   }
-
-   return "It was false";
-}
-
-printMessage(true);
-printMessage(false);
-```
-
-`printMessage(true)` returns the string `It was true`, and `printMessage(false)` returns the string `It was false`.
 
 ## Equality Operator
 There are many *comparison operators* in JavaScript. All of these operators return a boolean `true` or `false` value. The most basic operator is the equality operator **`==`**. The equality operator compares two values and returns `true` if they're equivalent or `false` if they are not. Note that equality is different from assignment (`=`), which assigns the value on the right of the operator to a variable on the left.
@@ -104,3 +86,51 @@ Example:
 7  >= '3' // true
 2  >=  3  // false
 ```
+
+## Less Than (`<`)
+The less than operator (`<`) compares the values of two numbers. If the number to the left is less than the number to the right, it returns `true`. Otherwise, it returns `false`. Like the equality operator, the less than operator converts data types while comparing.
+
+Example:
+```javascript
+2   < 5 // true
+'3' < 7 // true
+5   < 5 // false
+```
+
+## Less Than or Equal to (`<=`)
+The less than or equal to operator (`<=`) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns `true`. If the number on the left is greater than the number on the right, it returns `false`. Like the equality operator, the less than or equal to operator converts data types.
+
+Example:
+```javascript
+4   <= 5 // true
+'7' <= 7 // true
+3   <= 2 // false
+```
+
+## Logical *AND* (`&&`)
+The logical *`and`* operator (`&&`) returns true if and only if the operands to the left and right of it are true.
+
+Example:
+```javascript
+if (num > 5 && num < 10)  {
+   return "Yes";
+}
+
+return "No";
+```
+
+## Logical *OR* (`||`)
+The logical *`or`* operator (`||`) returns true if either of the operands is `true`. Otherwise, it returns `false`. The logical *or* operator is composed of two pipe symbols: (`||`). This can typically be found between your Backspace and Enter keys.
+
+Example:
+```javascript
+if (num > 10 || num < 5) {
+   return "No";
+}
+
+return "Yes";
+```
+
+## Great Read
+* [JavaScript booleans explained by going to court](https://www.freecodecamp.org/news/javascript-booleans-explained-by-going-to-court-a0ca1149a0dc/)
+* [JavaScript Booleans Explained – How to use Booleans in JavaScript](https://www.freecodecamp.org/news/booleans-in-javascript-explained-how-to-use-booleans-in-javascript/)
