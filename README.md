@@ -1,5 +1,8 @@
 # Freecodecamp
 
+### Git & Github
+Please make sure that you have a CLI (command line interface), a [**GitHub**](https://github.com/signup) account and a text editor of your choice (e.g. VS Code).
+
 ### Golang
 Please make sure there's a GO lang installed on your machine. If you're not familiar with GO lang, please go over to their [page](https://go.dev/doc/tutorial/getting-started) or you could visit [**Tour of Go**](https://go.dev/tour/welcome/1). To **download and install**, please follow the instructions described [here](https://go.dev/doc/install). For a detailed installation for Linux, please go to this [**page**](https://rmarasigan.github.io/notes/notes/go-lang/Installation.html).
 
@@ -15,6 +18,11 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 * `terraform destroy`   destroys all the resources
 
 # Table of Contents
+
+### Git & Github
+1. [What is Git?](/git-github/what-is-git.md)
+2. [Git Commands](/git-github/git-commands.md)
+3. [Create and Initialize a Project](/git-github/initialize-project.md)
 
 ### Golang Tutorial for Beginners
 1. [Variables](golang-beginners/variables/README.md)
@@ -64,3 +72,5 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 2. [Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU)
 3. [Terraform Course - Automate your AWS cloud infrastructure](https://www.youtube.com/watch?v=SLB_c_ayRMo)
 4. [JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+5. [Git and GitHub Tutorial – Version Control for Beginners](https://www.freecodecamp.org/news/git-and-github-for-beginners/)
+6. [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk)
