@@ -148,6 +148,34 @@ storage.cabinet["top drawer"].folder_2; // secrets
 storage.desk.drawer;                    // stapler
 ```
 
+## Accessing Nested Arrays
+Objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.
+
+Example:
+```javascript
+const pets = [
+   {
+      type: "cat",
+      names: [
+         "Meowzer",
+         "Fluffy",
+         "KitCat"
+      ]
+   },
+   {
+      type: "dog",
+      names: [
+         "Spot",
+         "Bowser",
+         "Frankie"
+      ]
+   }
+];
+
+pets[0].names[1];   // Fluffy
+pets[1].names[0];   // Spot
+```
+
 ## Great Read
 * [Objects in JavaScript – A Beginner's Guide](https://www.freecodecamp.org/news/objects-in-javascript-for-beginners/)
 * [What is a JavaScript Object? Key Value Pairs and Dot Notation Explained](https://www.freecodecamp.org/news/what-is-a-javascript-object/)
