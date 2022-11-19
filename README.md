@@ -53,7 +53,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 7. [Terraform Resources](/terraform/tf-resources/)
 8. [Terraform Variables](/terraform/tf-variables/)
 
-### JavaScript
+### [JavaScript](/javascript/README.md)
 1. Basic JavaScript
    1. [Comment](/javascript/basic-comment-variables.md#comment)
    2. [Variables](/javascript/basic-comment-variables.md#variables)
@@ -67,6 +67,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    10. [`switch` Statements](/javascript/basic-swtich.md)
    11. [Objects](/javascript/basic-objects.md)
    12. [Loops](/javascript/basic-loops.md)
+   13. [Recursion](/javascript/basic-recursion.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)

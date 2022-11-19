@@ -20,6 +20,7 @@ When JavaScript was created, it initially had another name: "LiveScript". But Ja
 * [`switch` Statements](basic-swtich.md)
 * [Objects](basic-objects.md)
 * [Loops](basic-loops.md)
+* [Recursion](basic-recursion.md)
 
 ## Good Read
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
