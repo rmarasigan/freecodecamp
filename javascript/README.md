@@ -37,6 +37,8 @@ ECMAScript is a scripting language specification on which JavaScript is based. [
 * [`var` and `let` Keywords](es6/var-let.md)
 * [`const` Keyword](es6/const.md)
 * [Prevent Object Mutation](es6/object-mutation.md)
+* [Arrow Functions](es6/arrow-functions.md)
+* [Default and Rest Parameters and Spreat Operator](es6/functions.md)
 
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)
