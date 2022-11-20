@@ -11,22 +11,22 @@ When JavaScript was created, it initially had another name: "LiveScript". But Ja
 
 JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.
 
-* [Comment](basic-comment-variables.md#comment)
-* [Variables](basic-comment-variables.md#variables)
-* [`var`, `let`, `const`](basic-var-let-const.md)
-* [Strings](basic-string.md)
-* [Numbers](basic-numbers.md)
-* [Arrays](basic-array.md)
-* [Functions](basic-functions.md)
-* [Boolean](basic-boolean.md)
-* [`if` — `else if` — `else` Statements](basic-if-else-if.md)
-* [`switch` Statements](basic-swtich.md)
-* [Objects](basic-objects.md)
-* [Loops](basic-loops.md)
-* [Recursion](basic-recursion.md)
-* [Generate Random Number](basic-generate-random.md)
-* [`parseInt()`](basic-parseInt.md)
-* [Conditional Operator](basic-conditional-operator.md)
+* [Comment](basics/comment-variables.md#comment)
+* [Variables](basics/comment-variables.md#variables)
+* [`var`, `let`, `const`](basics/var-let-const.md)
+* [Strings](basics/string.md)
+* [Numbers](basics/numbers.md)
+* [Arrays](basics/array.md)
+* [Functions](basics/functions.md)
+* [Boolean](basics/boolean.md)
+* [`if` — `else if` — `else` Statements](basics/if-else-if.md)
+* [`switch` Statements](basics/swtich.md)
+* [Objects](basics/objects.md)
+* [Loops](basics/loops.md)
+* [Recursion](basics/recursion.md)
+* [Generate Random Number](basics/generate-random.md)
+* [`parseInt()`](basics/parseInt.md)
+* [Conditional Operator](basics/conditional-operator.md)
 
 ### ES6
 
