@@ -72,6 +72,11 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    15. [`parseInt()`](/javascript/basic-parseInt.md)
    16. [Conditional Operator](/javascript/basic-conditional-operator.md)
 
+2. ES6
+   1. [`var` and `let` Keywords](/javascript/es6/var-let.md)
+   2. [`const` Keyword](/javascript/es6/const.md)
+   3. [Prevent Object Mutation](/javascript/es6/object-mutation.md)
+
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
 2. [Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU)
