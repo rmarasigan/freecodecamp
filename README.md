@@ -77,7 +77,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    2. [`const` Keyword](/javascript/es6/const.md)
    3. [Prevent Object Mutation](/javascript/es6/object-mutation.md)
    4. [Arrow Functions](/javascript/es6/arrow-functions.md)
-   5. [Default and Rest Parameters and Spreat Operator](/javascript/es6/functions.md)
+   5. [Default and Rest Parameters and Spread Operator](/javascript/es6/functions.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
