@@ -22,6 +22,8 @@ When JavaScript was created, it initially had another name: "LiveScript". But Ja
 * [Loops](basic-loops.md)
 * [Recursion](basic-recursion.md)
 * [Generate Random Number](basic-generate-random.md)
+* [`parseInt()`](basic-parseInt.md)
+* [Conditional Operator](basic-conditional-operator.md)
 
 ## Good Read
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
