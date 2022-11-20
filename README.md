@@ -68,6 +68,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    11. [Objects](/javascript/basic-objects.md)
    12. [Loops](/javascript/basic-loops.md)
    13. [Recursion](/javascript/basic-recursion.md)
+   14. [Generate Random Number](/javascript/basic-generate-random.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)

@@ -21,6 +21,7 @@ When JavaScript was created, it initially had another name: "LiveScript". But Ja
 * [Objects](basic-objects.md)
 * [Loops](basic-loops.md)
 * [Recursion](basic-recursion.md)
+* [Generate Random Number](basic-generate-random.md)
 
 ## Good Read
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
