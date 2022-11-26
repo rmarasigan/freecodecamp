@@ -78,6 +78,11 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    3. [Prevent Object Mutation](/javascript/es6/object-mutation.md)
    4. [Arrow Functions](/javascript/es6/arrow-functions.md)
    5. [Default and Rest Parameters and Spread Operator](/javascript/es6/functions.md)
+   6. [Destructuring Assignment](/javascript/es6/destructuring-assignment.md)
+   7. [Template Literals](/javascript/es6/template-literals.md)
+   8. [Object Literals](/javascript/es6/object-literals.md)
+   9. [Class](/javascript/es6/class.md)
+
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)

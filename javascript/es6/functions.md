@@ -1,7 +1,20 @@
 # Functions
 
 ### Arguments vs. Parameters
-Sometimes, you can use the terms argument and parameter interchangeably. However, by definition, parameters are what you specify in the function declaration whereas the arguments are what you pass into the function.
+Sometimes, you can use the terms argument and parameter interchangeably. However, by definition, **parameters** are what you specify in the function declaration whereas the **arguments** are what you pass into the function.
+
+## Declarative Function
+With ES6, you can remove the `function` keyword and colon altogether when defining functions in objects.
+
+Example:
+```javascript
+const person = {
+   name: "Taylor",
+   sayHello() {
+      return `Hello! My name is ${this.name}`;
+   }
+};
+```
 
 ## Default Parameters
 In order to help us create more flexible functions, the ES6 introduces *default parameters* for functions. Default function parameters allow named parameters to be initialized with default values if no value or `undefined` is passed.
