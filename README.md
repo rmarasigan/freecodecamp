@@ -82,6 +82,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    7. [Template Literals](/javascript/es6/template-literals.md)
    8. [Object Literals](/javascript/es6/object-literals.md)
    9. [Class](/javascript/es6/class.md)
+   10 [Modules](/javascript/es6/modules.md)
 
 
 # Reference

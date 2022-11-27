@@ -43,6 +43,7 @@ ECMAScript is a scripting language specification on which JavaScript is based. [
 * [Template Literals](es6/template-literals.md)
 * [Object Literals](es6/object-literals.md)
 * [Class](es6/class.md)
+* [Modules](es6/modules.md)
 
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)
