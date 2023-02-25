@@ -9,7 +9,7 @@ When JavaScript was created, it initially had another name: "LiveScript". But Ja
 
 ### Basic JavaScript
 
-JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.
+**JavaScript** is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.
 
 * [Comment](basics/comment-variables.md#comment)
 * [Variables](basics/comment-variables.md#variables)
@@ -30,7 +30,7 @@ JavaScript is a scripting language you can use to make web pages interactive. It
 
 ### ES6
 
-ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.
+**ECMAScript**, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.
 
 ECMAScript is a scripting language specification on which JavaScript is based. [Ecma International](https://www.ecma-international.org/) is in charge of standardizing ECMAScript.
 
@@ -46,9 +46,18 @@ ECMAScript is a scripting language specification on which JavaScript is based. [
 * [Modules](es6/modules.md)
 * [Promise](es6/promise.md)
 
+### Regular Expressions
+**Regular expressions**, often shortened to "regex" or "regexp", are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.
+
+Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects.These patterns are used with the [`exec()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec), and [`test()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) methods of [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp), and with the [`match()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match), [`matchAll()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll), [`replace()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace), [`replaceAll()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll), [`search()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search), and [`split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) methods of [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+
+* [`test()` Method](regex/test-method.md)
+* [`match()` Method](regex/match-method.md)
+
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [ES6 Tutorial](https://www.javascripttutorial.net/es6/)
+* [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 * [The Modern JavaScript Tutorial](https://javascript.info/)
 * [JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
