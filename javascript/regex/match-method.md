@@ -127,3 +127,85 @@ You can apply the regex `/t[a-z]*i/` to the string `"titanic"`. This regex is ba
 However, you can use the `?` character to change it to lazy matching. `"titanic"` matched against the adjusted regex of `/t[a-z]*?i/` returns `["ti"]`.
 
 **NOTE**: Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
+
+### Match beginning string patterns
+Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+
+```javascript
+let rickyRegex = "/^Ricky/";
+let notFirst = "You can't find Ricky now."
+let ricky = "Ricky is first and can be found.";
+
+rickyRegex.test(ricky);     // true
+rickyRegex.test(notFirst);  // false
+```
+
+### Match ending string patterns
+There is also a way to search for patterns at the end of strings. You can search the end of strings using the dollar sign character `$` at the end of the regex.
+
+```javascript
+let textRegex = /story$/;
+let ending = "This is a never ending story";
+let noEnding = "Sometimes a story will have to end";
+
+textRegex.test(ending);   // true
+textRegex.test(noEnding); // false
+```
+
+### Match all letters and numbers
+Using character classes, you were able to search for all letters of the alphabet with `[a-z]`. This kind of character class is common enough that there is a shortcut for it, although it includes a few extra characters as well.
+
+The closest character class in JavaScript to match the alphabet is `\w`. This shortcut is equal to `[A-Za-z0-9_]`. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (`_`).
+
+```javascript
+let shortHand = /\w+/;
+let longHand = /[A-Za-z0-9_]+/;
+
+let numbers = "42";
+let names = "important_var";
+
+longHand.test(numbers);   // true
+shortHand.test(numbers);  // true
+
+longHand.test(names);   // true
+shortHand.test(names);  // true
+```
+
+These shortcut character classes are also known as *shorthand character classes*.
+
+### Match everything but letters and numbers
+A natural pattern you might want to search for is the opposite of alphanumerics. You can search for the opposite of the `\w` with *`\W`*. Note, the opposite pattern uses a capital letter. This shortcut is the same as `[^A-Za-z0-9_]`.
+
+```javascript
+let shortHand = /\W/;
+
+let numbers = "42%";
+let phrase = "Coding!";
+
+numbers.match(shortHand); // ["%"]
+phrase.match(shortHand);  // ["!"]
+```
+
+### Match all numbers
+Another common pattern is looking for just digits or numbers. The shortcut to look for digit characters is `\d`, with a lowercase `d`. This is equal to the character class `[0-9]`, which looks for a single character of any number between zero and nine.
+
+### Match all non-numbers
+You can also search for non-digits using a similar shortcut that uses an uppercase `D` instead. The shortcut to look for non-digit characters is `\D`. This is equal to the character class `[^0-9]`, which looks for a single character that is not a number between zero and nine.
+
+### Match whitespace
+You can also match the whitespace or spaces between letters. You can search for whitespace using `\s`, which is a lowercase **`s`**. This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. You can think of it as similar to the character class `[ \r\t\f\n\v]`.
+
+```javascript
+let spaceRegex = /\s/g;
+let whitespace = "Whitespace. Whitespace everywhere!";
+whitespace.match(spaceRegex); // [" ", " "]
+```
+
+### Match non-whitespace characters
+Search for non-whitespace using `\S`, which is an uppercase `s`. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class `[^ \r\t\f\n\v]`.
+
+```javascript
+let spaceRegex = /\S/g;
+let whitespace = "Whitespace. Whitespace everywhere!";
+whitespace.match(spaceRegex).length; // 32
+```
