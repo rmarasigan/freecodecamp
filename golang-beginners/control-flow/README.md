@@ -78,7 +78,7 @@ func main() {
 		"Ohio":         11614373,
 	}
 
-   // Initializer statement
+	// Initializer statement
 	if pop, ok := statePopulations["Florida"]; ok {
 		fmt.Println(pop)
 	}
@@ -206,7 +206,7 @@ true
 false
 ```
 
-The another interesting thing to know about working with logical operators, is a concept called [**short circuiting**](https://kuree.gitbooks.io/the-go-programming-language-report/content/22/text.html).
+The another interesting thing to know about working with logical operators, is a concept called [**short-circuiting**](https://kuree.gitbooks.io/the-go-programming-language-report/content/22/text.html).
 
 ```go
 func returnTrue() bool {
@@ -259,7 +259,150 @@ The guess must be between 1 and 100!
 false true true
 ```
 
-Well, what happened is a concept called short circuiting. As soon as one part of an *OR* test returns `true`, then Go doesn't need to execute any more code, it already knows that the *OR* test is going to pass. So that's why it is called short circuiting, which basically means it is not going to evaluate any other part of the *OR* test. It is going to move on and say, well, the *OR* test passed, and therefore everything works. Since `guess < 1`, there's no reason for Go to evaluate the two tests. Go is going to lazily evaluate the logical tests that we put in here.
+Well, what happened is a concept called **short-circuiting**. As soon as one part of an *OR* test returns `true`, then Go doesn't need to execute any more code, it already knows that the *OR* test is going to pass. So that's why it is called short-circuiting, which basically means it is not going to evaluate any other part of the *OR* test. It is going to move on and say, well, the *OR* test passed, and therefore everything works. Since `guess < 1`, there's no reason for Go to evaluate the two tests. Go is going to lazily evaluate the logical tests that we put in here.
+
+The same thing happens for an *AND* (`&&`) test, if one of the parameters returns `false`, then we're going to get a short-circuiting. So if we get into a situation where it is `false`, Go will not even evaluate the test. For example, with the negative five (-5), when Go evaluates this, it sees that the `guess` is not greater than or equal to one. So the *AND* test has to fail because both sides of *AND* test have to return `true` in order to work and so Go is going to exit early. It's not going to execute this code.
+
+```go
+func main() {
+	number := 50
+	guess := -5
+	...
+	if guess >= 1 && guess <= 100 {
+		...
+	}
+	...
+}
+```
+
+The way we can do it a little bit more elegantly in Go is by putting in the keyword `else`. If the tests return a boolean `true`, then it will be going to print `The guess must be between 1 and 100!`. Otherwise, it will execute the `else` block.
+
+```go
+func main() {
+	number := 50
+	guess := 30
+
+	if guess < 1 || guess > 100 {
+		fmt.Println("The guess must be between 1 and 100!")
+	} else {
+
+		if guess < number {
+			fmt.Println("Too low")
+		}
+
+		if guess > number {
+			fmt.Println("Too high")
+		}
+
+		if guess == number {
+			fmt.Println("You got it!")
+		}
+	}
+
+	fmt.Println(number <= guess, number >= guess, number != guess)
+}
+```
+
+Output:
+```
+Too low
+false true true
+```
+
+Related to that is the situation where we have multiple tests that we want to chain togehter. In this case, we've actually split out the validation logic. So we want to check if it is less than one, we want to print out one message, if it is greater than one hundred, we want to print out another message. Otherwise, we've got a valid value. To do that, we're using the **`else if**` clause. Basically, what this is doing is it is taking an `if` test, and then it is chaining on another `if` test if this fails. So what Go is gonna do is the first logical test that passes is going to be executed, otherwise, it is going to drop down to the `else` clause. With the `guess` of 30, we would expect our `else` clause to fire up.
+
+```go
+func main() {
+	number := 50
+	guess := 30
+
+	if guess < 1 {
+		fmt.Println("The guess must be greater than 1!")
+	} else if guess > 100 {
+		fmt.Println("The guess must be less than 100!")
+	} else {
+
+		if guess < number {
+			fmt.Println("Too low")
+		}
+
+		if guess > number {
+			fmt.Println("Too high")
+		}
+
+		if guess == number {
+			fmt.Println("You got it!")
+		}
+	}
+
+	fmt.Println(number <= guess, number >= guess, number != guess)
+}
+```
+
+Output:
+```
+Too low
+false true true
+```
+
+Another thing to keep in mind when you are working with equality operators. If we take a look at this example, we've got a floating point number of 0.1. And we're going to check to see if that number is equal to the squared number, and then we're going to take the square root of it. If we run this, it should evaluate to true.
+
+```go
+func main() {
+	myNum := 0.1
+
+	if myNum == math.Pow(math.Sqrt(myNum), 2) {
+		fmt.Println("These are the same")
+	} else {
+		fmt.Println("These are different")
+	}
+}
+```
+
+Output:
+```
+These are the same
+```
+
+However, if we add in a couple of decimal places here and run this, now it says that the results are different. Well, the fact is that if we square a number and take the square root of it, it is the same number. The thing is, Go is working with floating point numbers and floating point numbers are approximations of decimal values. They're not exact representations of decimal values. So we have to be very careful with them. When we're doing comparison operations with decimal values, this is generally not a good idea. The better approach is to generate some kind of an error value and then check to see if that error value is less than a certain threshold.
+
+```go
+func main() {
+	myNum := 0.123
+
+	if myNum == math.Pow(math.Sqrt(myNum), 2) {
+		fmt.Println("These are the same")
+	} else {
+		fmt.Println("These are different")
+	}
+}
+```
+
+Output:
+```
+These are different
+```
+
+In this case, since we're taking a float point number and comparing it to a floating point number, what we can do is divide it into two numbers and subtract 1. Now, what we have is a value that's close to zero. If we take the absolute value of that, and then check that to see if it is less than, for example, 0.001. What this is doing is, if they're within a 10th of a percentage of each other, then we're going to consider them to be the same.
+
+```go
+func main() {
+	myNum := 0.123	
+
+	if math.Abs(myNum / math.Pow(math.Sqrt(myNum), 2), -1) < 0.001 {
+		fmt.Println("These are the same")
+	} else {
+		fmt.Println("These are different")
+	}
+}
+```
+
+Output:
+```
+These are the same
+```
+
+Now, this isn't a perfect solution, because we could get two numbers that aren't truly the same and get them to pass this test. So the key to that is tuning the error parameter (`0.001`), making sure that it is sufficiently small to catch those cases, but sufficiently large, so that the errors introduced with floating point operations don't affect the results.
 
 ## Reference
 * [If statements](https://golangr.com/if/)
