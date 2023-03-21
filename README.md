@@ -32,6 +32,9 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 5. [Maps and Structs](golang-beginners/maps-structs/README.md)
 6. [Control Flow](golang-beginners/control-flow/README.md)
 7. [Looping](golang-beginners/looping/README.md)
+8. [Defer, Panic, and Recover](golang-beginners/defer-panic-recover/README.md)
+
+   a. [`defer` and `panic` Example](golang-beginners/defer-panic-recover/main.go)
 
 ### Go Lang
 1. [go-server](/go-server/)
