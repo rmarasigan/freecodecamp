@@ -404,7 +404,315 @@ These are the same
 
 Now, this isn't a perfect solution, because we could get two numbers that aren't truly the same and get them to pass this test. So the key to that is tuning the error parameter (`0.001`), making sure that it is sufficiently small to catch those cases, but sufficiently large, so that the errors introduced with floating point operations don't affect the results.
 
+## `switch` statements
+A **`switch`** statement allows a variable to be tested for equality against a list of values. Each value is called a ***case***, and the variable being switched on is checked for each **switch case**. It is a kind of special purpose `if` statement. So where `if` statement has a logical test and runs a block of code if that test is true, and then you can add an `else if` to run a second test and another `else if` and as many `else if`'s as you want.
+
+In this example, we're going to start with the value of `2` and that is called a *tag* when we're working with `switch` statements. So this is what we're going to compare everything against, then we're going to have a series of cases. What's going to happen is the value in each cases is going to be compared to the tag. If that is true, then the statements after the `case` are going to be executed. If not, then they're not going to execute.
+
+Just like with `if` statements, the first case that passes is going to be the one that executes. We also have the **`default`** case and that is going to execute if none of our other test cases passed. It is a very simple way to compare one variable to multiple possible values for that variable.
+
+Example:
+```go
+func main() {
+	switch 2 {
+	case 1:
+		fmt.Println("one")
+	
+	case 2:
+		fmt.Println("two")
+	
+	default:
+		fmt.Println("not one or two")
+	}
+}
+```
+
+Output:
+```
+two
+```
+
+If you want to compare against a range, then you'd have to do something like *falling through* in order to compare multiple cases together. We don't have falling through as a default behavior in Go, but what we do have to make up for that is the ability to have multiple tests in a single case.
+
+```go
+func main() {
+	switch 5 {
+	case 1, 5, 10:
+		fmt.Println("one, five or ten")
+	
+	case 2, 4, 6:
+		fmt.Println("two, four or six")
+	
+	default:
+		fmt.Println("another number")
+	}
+}
+```
+
+Output:
+```
+one, five or ten
+```
+
+One thing that we have to be aware of is the test cases do have to be unique. There would be a syntax error because we can't have overlapping cases when we're using the syntax.
+
+```go
+func main() {
+	switch 5 {
+	case 1, 5, 10:
+		fmt.Println("one, five or ten")
+	
+	// duplicate case 5 in switch
+	case 2, 4, 5:
+		fmt.Println("two, four or five")
+	
+	default:
+		fmt.Println("another number")
+	}
+}
+```
+
+Just like with `if` statements, we don't have to have a simple tag in our switch statement, we can use an initializer.
+```go
+func main() {
+	switch i := 2 + 3; i  {
+	case 1, 5, 10:
+		fmt.Println("one, five or ten")
+	
+	case 2, 4, 6:
+		fmt.Println("two, four or five")
+	
+	default:
+		fmt.Println("another number")
+	}
+}
+``` 
+
+Output:
+```
+one, five or ten
+```
+
+Another syntax, called *tagless* syntax is arguably more powerful than the *tag* syntax. Although it is a little bit more verbose. We've got a `switch` statement that is standing alone and immediately opening a curly brace. Notice that we don't have a tag here. However, in the `case` statements now, we've got full comparison operations. We can use the comparison operators or the logical operators. In this `cases` are standing in for the logical tests that we have in our `if` statements.
+
+```go
+func main() {
+	var i := 10
+
+	switch {
+	case i <= 10:
+		fmt.Println("less than or equal to ten")
+	
+	case i <= 20:
+		fmt.Println("less than or equal to twenty")
+	
+	default:
+		fmt.Println("greater than twenty")
+	}
+}
+```
+
+Output:
+```
+less than or equal to ten
+```
+
+If you notice, the first case and the second case overlap because 10 is less than or equal to 10. It is also less than or equal to 20. Unlike the *tag* syntax, we've got multiple test cases and they cannot overlap. When we're using the *tagless* syntax, they are allowed to overlap. If they do, then the first case that evaluates to true is going to execute.
+
+What happens if you do want your case to fallthrough? Let's just say that we do want to print out that we're less than or equal to 10, and that we're less than or equal to 20. We know that if we pass the first case, we're going to pass the second case too. In that case, we can use the keyword **`fallthrough`**.
+
+```go
+func main() {
+	var i := 10
+
+	switch {
+	case i <= 10:
+		fmt.Println("less than or equal to ten")
+		fallthrough
+	
+	case i <= 20:
+		fmt.Println("less than or equal to twenty")
+	
+	default:
+		fmt.Println("greater than twenty")
+	}
+}
+```
+
+Output:
+```
+less than or equal to ten
+less than or equal to twenty
+```
+
+One thing to keep in mind, `fallthrough` is logicless. So when we say `fallthrough` to the next case, it will do that. In the example, we know that `i` fails the second case but it still executes the second case because `fallthrough` means that you are taking that responsibility with the control flow and you intentionally want the statements in the next case to execute.
+
+```go
+func main() {
+	var i := 10
+
+	switch {
+	case i <= 10:
+		fmt.Println("less than or equal to ten")
+		fallthrough
+	
+	case i >= 20:
+		fmt.Println("less than or equal to twenty")
+	
+	default:
+		fmt.Println("greater than twenty")
+	}
+}
+```
+
+Output:
+```
+less than or equal to ten
+less than or equal to twenty
+```
+
+### Two types of `switch` statements
+
+#### Expression Switch
+In **expression switch**, a case contains expressions, which is compared against the value of the switch expression.
+
+**Syntax:**
+```go
+switch (boolean-expression or integral type) {
+case boolean-expression or integral type:
+	statement(s)
+
+case boolean-expression or integral type:
+	statements(s)
+
+default: // Optional
+	statement(s)
+}
+```
+
+Example:
+```go
+func main() {
+	var (
+		marks int = 90
+		grade string = "B"
+	)
+	
+	switch marks {
+	case 90:
+		grade = "A"
+	
+	case 80:
+		grade = "B"
+	
+	case 50,60,70 :
+		grade = "C"
+	
+	default:
+		grade = "D"  
+  }
+	
+	switch {
+	
+	case grade == "A" :
+		fmt.Printf("Excellent!\n" )
+	
+	case grade == "B", grade == "C" :
+  	fmt.Printf("Well done\n" )
+	
+	case grade == "D" :
+		fmt.Printf("You passed\n" )
+	
+	case grade == "F":
+		fmt.Printf("Better try again\n" )
+	
+	default:
+		fmt.Printf("Invalid grade\n" );
+  }
+	
+	fmt.Printf("Your grade is  %s\n", grade );
+}
+```
+
+Output:
+```
+Excellent!
+Your grade is  A
+```
+
+#### Type Switch
+In **type switch**, a case contain type which is compared against the type of a specially annotated switch expression.
+
+**Syntax:**
+```go
+switch x.(type) {
+case type:
+	statement(s)
+
+case type:
+	statement(s)
+
+default: // Optional
+	statement(s)
+}
+```
+
+What this is going to do is tell Go to pull the actual underlying type of that interface and use that `interface` and use that for whatever we're doing next. We just don't use that for type switching, but this is a common use case for it.
+
+```go
+func main() {
+	var x interface{}
+
+	switch i := x.(type) {
+	case nil:
+		fmt.Printf("type of x: %T", i)
+	
+	case int:
+		fmt.Printf("x is int")
+	
+	case float64:
+		fmt.Printf("x is float64")
+	
+	case func(int) float64:
+		fmt.Printf("x is func(int)")
+	
+	case bool, string:
+		fmt.Printf("x is bool or string")
+	
+	default:
+		fmt.Printf("don't know the type")
+	}
+}
+```
+
+Output:
+```
+type of x:<nil>
+```
+
+## Summary
+
+#### If statements
+* Initializer
+* Comparison operators
+* Logical operators
+* Short circuiting
+* If-else statements
+* If-else if statements
+* Equality and floats
+
+#### Switch statements
+* Switching on a tag
+* Cases with multiple tests
+* Initializers
+* Switches with no tags
+* Fallthrough
+* Type switches
+
 ## Reference
+* [Go switch](https://zetcode.com/golang/switch/)
 * [If statements](https://golangr.com/if/)
+* [Switch Statement](https://golangr.com/switch/)
 * [Operators: complete list](https://yourbasic.org/golang/operators/)
+* [Go - The Switch Statement](https://www.tutorialspoint.com/go/go_switch_statement.htm)
 * [Control statements and functions](https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/02.3.html)
