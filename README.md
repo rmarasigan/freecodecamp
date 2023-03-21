@@ -31,6 +31,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 4. [Arrays and Slices](golang-beginners/arrays-slices/README.md)
 5. [Maps and Structs](golang-beginners/maps-structs/README.md)
 6. [Control Flow](golang-beginners/control-flow/README.md)
+7. [Looping](golang-beginners/looping/README.md)
 
 ### Go Lang
 1. [go-server](/go-server/)
