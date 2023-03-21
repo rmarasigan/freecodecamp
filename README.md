@@ -1,10 +1,40 @@
-# Freecodecamp
+![Freecodecamp](assets/img/freecodecamp.png)
+
+# Table of Contents
 
 ### Git & Github
 Please make sure that you have a CLI (command line interface), a [**GitHub**](https://github.com/signup) account and a text editor of your choice (e.g. VS Code).
 
+1. [What is Git?](/git-github/what-is-git.md)
+2. [Git Commands](/git-github/git-commands.md)
+3. [Create and Initialize a Project](/git-github/initialize-project.md)
+
 ### Golang
 Please make sure there's a GO lang installed on your machine. If you're not familiar with GO lang, please go over to their [page](https://go.dev/doc/tutorial/getting-started) or you could visit [**Tour of Go**](https://go.dev/tour/welcome/1). To **download and install**, please follow the instructions described [here](https://go.dev/doc/install). For a detailed installation for Linux, please go to this [**page**](https://rmarasigan.github.io/notes/notes/go-lang/Installation.html).
+
+#### Golang Tutorial for Beginners
+
+1. [Variables](golang/golang-beginners/variables/README.md)
+2. [Primitives](golang/golang-beginners/primitives/README.md)
+3. [Constants](golang/golang-beginners/constants/README.md)
+4. [Arrays and Slices](golang/golang-beginners/arrays-slices/README.md)
+5. [Maps and Structs](golang/golang-beginners/maps-structs/README.md)
+6. [Control Flow](golang/golang-beginners/control-flow/README.md)
+7. [Looping](golang/golang-beginners/looping/README.md)
+8. [Defer, Panic, and Recover](golang/golang-beginners/defer-panic-recover/README.md)
+
+   a. [`defer` and `panic` Example](golang/golang-beginners/defer-panic-recover/main.go)
+
+#### Go Lang
+1. [go-server](golang/golang-projects/go-server/)
+2. [go-movies-crud](golang/golang-projects/go-movies-crud/)
+3. [go-bookstore](golang/golang-projects/go-bookstore/)
+4. [slack-age-bot](golang/golang-projects/slack-bot-age/)
+5. [email-checker-tool](golang/golang-projects/email-checker-tool/)
+6. [lambda-basics](golang/golang-projects/lambda-basics/)
+7. [go-fiber-crm-basic](golang/golang-projects/go-fiber-crm-basic/)
+8. [go-fiber-mongo-hrms](golang/golang-projects/go-fiber-mongo-hrms/)
+9. [go-serverless](golang/golang-projects/go-serverless/)
 
 ### Terraform
 Please make sure you already have an AWS Account and AWS CLI configured. If your AWS CLI is still not configured, and is using a Linux machine, you could follow the steps [here](Installation.md#aws-cli). To **download and install** the Terraform, and you are using a Linux machine, please follow the instructions described [here](https://rmarasigan.github.io/notes/notes/terraform/installation.html). For a detailed installation in a different OS, please go to this [**page**](https://learn.hashicorp.com/tutorials/terraform/install-cli)
@@ -17,37 +47,6 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 * `terraform apply`     deploys resources on your specific provider
 * `terraform destroy`   destroys all the resources
 
-# Table of Contents
-
-### Git & Github
-1. [What is Git?](/git-github/what-is-git.md)
-2. [Git Commands](/git-github/git-commands.md)
-3. [Create and Initialize a Project](/git-github/initialize-project.md)
-
-### Golang Tutorial for Beginners
-1. [Variables](golang-beginners/variables/README.md)
-2. [Primitives](golang-beginners/primitives/README.md)
-3. [Constants](golang-beginners/constants/README.md)
-4. [Arrays and Slices](golang-beginners/arrays-slices/README.md)
-5. [Maps and Structs](golang-beginners/maps-structs/README.md)
-6. [Control Flow](golang-beginners/control-flow/README.md)
-7. [Looping](golang-beginners/looping/README.md)
-8. [Defer, Panic, and Recover](golang-beginners/defer-panic-recover/README.md)
-
-   a. [`defer` and `panic` Example](golang-beginners/defer-panic-recover/main.go)
-
-### Go Lang
-1. [go-server](/go-server/)
-2. [go-movies-crud](/go-movies-crud/)
-3. [go-bookstore](/go-bookstore/)
-4. [slack-age-bot](/slack-bot-age/)
-5. [email-checker-tool](/email-checker-tool/)
-6. [lambda-basics](/lambda-basics/)
-7. [go-fiber-crm-basic](/go-fiber-crm-basic/)
-8. [go-fiber-mongo-hrms](/go-fiber-mongo-hrms/)
-9. [go-serverless](/go-serverless/)
-
-### Terraform
 1. [Terraform EC2 AWS](/terraform/tf-ec2-aws/)
 2. [Terraform Subnet within the VPC](/terraform/tf-vpc-aws/)
 3. [Terraform Files](/terraform/tf-files/)
