@@ -25,7 +25,9 @@ Please make sure there's a GO lang installed on your machine. If you're not fami
 
    a. [`defer` and `panic` Example](golang/golang-beginners/defer-panic-recover/main.go)
 
-#### Go Lang
+9. [Pointers](golang/golang-beginners/pointers/README.md)
+
+#### Golang Projects
 1. [go-server](golang/golang-projects/go-server/)
 2. [go-movies-crud](golang/golang-projects/go-movies-crud/)
 3. [go-bookstore](golang/golang-projects/go-bookstore/)
