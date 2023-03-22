@@ -26,6 +26,9 @@ Please make sure there's a GO lang installed on your machine. If you're not fami
    a. [`defer` and `panic` Example](golang/golang-beginners/defer-panic-recover/main.go)
 
 9. [Pointers](golang/golang-beginners/pointers/README.md)
+10. [Functions](golang/golang-beginners/functions/README.md)
+
+   a. [Anonymous Function Example](golang/golang-beginners/functions/main.go)
 
 #### Golang Projects
 1. [go-server](golang/golang-projects/go-server/)
