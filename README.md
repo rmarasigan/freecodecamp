@@ -96,6 +96,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 3. [Regex](/javascript/README.md#regular-expressions)
    1. [`test()` Method](/javascript/regex/test-method.md)
    2. [`match()` Method](/javascript/regex/match-method.md)
+   3. [Capture Groupings](/javascript/regex/capture-group.md)
 
 
 # Reference

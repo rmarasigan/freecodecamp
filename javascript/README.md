@@ -53,6 +53,7 @@ Regular expressions are patterns used to match character combinations in strings
 
 * [`test()` Method](regex/test-method.md)
 * [`match()` Method](regex/match-method.md)
+* [Capture Groupings](regex/capture-group.md)
 
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)

@@ -209,3 +209,60 @@ let spaceRegex = /\S/g;
 let whitespace = "Whitespace. Whitespace everywhere!";
 whitespace.match(spaceRegex).length; // 32
 ```
+
+### Positive and Negative Lookahead
+*Lookaheads* are patterns that tell JavaScript to look-ahead in your string to check for patterns further along. This can be useful when you want to search for multiple patterns over the same string. There are two kinds of lookaheads: positive lookahead and negative lookahead.
+
+A ***positive lookahead*** will look to make sure the element in the search pattern is there, but won't actually match it. A positive lookahead is used as (`?=...`) where the `...` is the required part that is not matched.
+
+Syntax:
+```javascript
+/match(?=element)/
+```
+
+If `element` follows `match` then it will be a match otherwise will technically not be a match and will not be declared as a match. The positive lookahead is a sort of group with parenthesis around it. Within this group the expression starts with a question mark immediately followed by equal sign and then the element to look ahead.
+
+Example:
+```
+This is a car
+
+Regex: /a(?=r)/
+```
+The regex is going to match that `a` which is immediately followed by an `r`.
+
+On the other hand, a ***negative lookahead*** will look to make sure the element in the search pattern is not there. A negative lookahead is used as (`?!...`) where the `...` is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+
+Syntax:
+```javascript
+/match(?!element)/gm
+```
+
+Where `match` is the item to match and `element` is the item which should not immediately follow for a successful match. The match will be declared a match if it is not followed by a given element. Thus this pattern helps in matching those items which have a condition of not being immediately followed by a certain character, group of characters or a regex group.
+
+Example:
+```
+ad, ae, az, ab
+
+Regex: /a(?!b)/
+```
+The regex is going to match `ad`, `ae`, and `az` but will not match `ab`.
+
+
+```javascript
+let quit = "qu";
+let no_quit = "qt";
+
+let quitRegex = /q(?=u)/;
+let noQuitRegex = /q(?!u)/;
+
+quit.match(quRegex);          // ["q"]
+no_quit.match(noQuitRegex);   // ["q"]
+```
+
+A more practical use of lookaheads is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
+```javascript
+let password = "abc123";
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+
+checkPass.test(password);
+```
