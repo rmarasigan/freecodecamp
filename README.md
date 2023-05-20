@@ -105,6 +105,9 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    4. [Runtime Errors](/javascript/debugging/runtime-errors.md)
    5. [Logical Errors](/javascript/debugging/logical-errors.md)
 
+5. [Basic Data Structures](/javascript/README.md#basic-data-structures)
+   1. [Array](/javascript/data-structures/array.md)
+
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
 2. [Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU)

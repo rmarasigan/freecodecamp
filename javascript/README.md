@@ -64,6 +64,13 @@ Regular expressions are patterns used to match character combinations in strings
 * [Runtime Errors](debugging/runtime-errors.md)
 * [Logical Errors](debugging/logical-errors.md)
 
+### Basic Data Structures
+Data can be stored and accessed in many ways. In computer science, a data structure is **a format to organize, manage and store data** in a way that allows **efficient access and modification**. More precisely, a data structure is a **collection of data values**, the **relationships** among them,and the functions or **operations** that can be applied to that data.
+
+JavaScript has **primitive (built-in)** and **non-primitive (not built-in)** data structures. **Primitive data structures** come by default with the programming language and you can implement them out of the box (like arrays and objects). **Non-primitive data structures** don't come by default and you have to code them up if you want to use them. Different data structures exist because some of them are better suited for certain kind of operations.
+
+* [Array](data-structures/array.md)
+
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -71,3 +78,4 @@ Regular expressions are patterns used to match character combinations in strings
 * [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 * [The Modern JavaScript Tutorial](https://javascript.info/)
 * [JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+* [Data Structures in JavaScript – With Code Examples](https://www.freecodecamp.org/news/data-structures-in-javascript-with-examples/)
