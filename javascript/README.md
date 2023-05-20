@@ -55,6 +55,15 @@ Regular expressions are patterns used to match character combinations in strings
 * [`match()` Method](regex/match-method.md)
 * [Capture Groupings](regex/capture-group.md)
 
+### Debugging
+**Debugging** is the process of going through your code, finding any issues, and fixing them. Issues in code generally come in three forms: *syntax errors* that prevent your program from running, *runtime errors* where your code has unexpected behavior, or *logical errors* where your code doesn't do what you intended. All modern browsers and most other environments support debugging tools - a special UI in developer tools that makes debugging much easier. It also allows to trace the code step by step to see what exactly is going on.
+
+* [`console`](debugging/console.md)
+* [`typeof`](debugging/typeof.md)
+* [Syntax Errors](debugging/syntax-errors.md)
+* [Runtime Errors](debugging/runtime-errors.md)
+* [Logical Errors](debugging/logical-errors.md)
+
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)

@@ -98,6 +98,12 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    2. [`match()` Method](/javascript/regex/match-method.md)
    3. [Capture Groupings](/javascript/regex/capture-group.md)
 
+4. [Debugging](/javascript/README.md#debugging)
+   1. [`console`](/javascript/debugging/console.md)
+   2. [`typeof`](/javascript/debugging/typeof.md)
+   3. [Syntax Errors](/javascript/debugging/syntax-errors.md)
+   4. [Runtime Errors](/javascript/debugging/runtime-errors.md)
+   5. [Logical Errors](/javascript/debugging/logical-errors.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)
