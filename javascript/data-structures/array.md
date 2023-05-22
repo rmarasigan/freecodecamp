@@ -267,12 +267,58 @@ function greaterThanTen(arr) {
 greaterThanTen([2, 12, 8, 14, 80, 0, 1]);   // [12, 14, 80]
 ```
 
+## Multi-dimensional Array
+JavaScript does not provide the multi-dimensional array natively. However, you can create a multi-dimensional array by defining an array of elements, where each element is also another array. For this reason, we can say that a JavaScript multi-dimensional array is an array of arrays. The easiest way to define a multi-dimensional array is to use the array literal notation.
+
+To declare an empty multi-dimensional array, you use the same syntax as declaring one-dimensional array:
+
+```javascript
+let arrays = [];
+```
+
+### Create complex multi-dimensional arrays
+One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, wan array can very quickly become a very complex data structure, known as *multi-dimensional*, or nested array. Consider the following example:
+
+```javascript
+let nestedArray = [
+  ['deep'],
+  [
+    ['deeper'], ['deeper'] 
+  ],
+  [
+    [
+      ['deepest'], ['deepest']
+    ],
+    [
+      [
+        ['deepest-est?']
+      ]
+    ]
+  ]
+];
+```
+
+The `deep` array is nested 2 levels deep. The `deeper` arrays are 3 levels deep. The `deepest` arrays are 4 levels, and the `deepest-est?` is 5. While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data. However, we can still very easily access the deepest levels of an array this complex with bracket notation:
+
+```javascript
+console.log(nestedArray[2][1][0][0][0]);
+```
+
+This logs the string `deepest-est?` and now that we know where that piece of data is, we can reset it if we need to.
+
+```javascript
+nestedArray[2][1][0][0][0] = 'deeper still';
+console.log(nestedArray[2][1][0][0][0]);    // deeper still
+```
+
 ## Good Read
 * [Spread syntax (...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 * [Rest parameters and spread syntax](https://javascript.info/rest-parameters-spread)
+* [JavaScript Multidimensional Array](https://www.javascripttutorial.net/javascript-multidimensional-array/)
 * [JavaScript String indexOf() method](https://www.javatpoint.com/javascript-string-indexof-method)
 * [JavaScript For Loop – Explained with Examples](https://www.freecodecamp.org/news/javascript-for-loops/)
 * [How to Use the Spread Operator (…) in JavaScript](https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab)
+* [JavaScript 2D Array – Two Dimensional Arrays in JS](https://www.freecodecamp.org/news/javascript-2d-arrays/)
 * [JavaScript Arrays: push(), pop(), shift() & unshift()](https://medium.com/an-idea/javascript-arrays-push-pop-shift-unshift-adc8fb815fc0)
 * [JavaScript Splice – How to Use the .splice() JS Array Method](https://www.freecodecamp.org/news/javascript-splice-how-to-use-the-splice-js-array-method/)
 * [How to Use the slice() and splice() JavaScript Array Methods](https://www.freecodecamp.org/news/javascript-slice-and-splice-how-to-use-the-slice-and-splice-js-array-methods/)
