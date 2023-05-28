@@ -107,6 +107,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
 
 5. [Basic Data Structures](/javascript/README.md#basic-data-structures)
    1. [Array](/javascript/data-structures/array.md)
+   2. [Objects](/javascript/data-structures/objects.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)

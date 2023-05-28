@@ -70,6 +70,7 @@ Data can be stored and accessed in many ways. In computer science, a data struct
 JavaScript has **primitive (built-in)** and **non-primitive (not built-in)** data structures. **Primitive data structures** come by default with the programming language and you can implement them out of the box (like arrays and objects). **Non-primitive data structures** don't come by default and you have to code them up if you want to use them. Different data structures exist because some of them are better suited for certain kind of operations.
 
 * [Array](data-structures/array.md)
+* [Objects](data-structures/objects.md)
 
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)

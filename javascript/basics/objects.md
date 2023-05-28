@@ -1,5 +1,5 @@
 # Objects
-AN **object** is a data type that can take in collections of key-value pairs. A major difference between an object and other data types such as strings and numbes in JavaScript is that an objects can store different types of data as its values. On the other hand, primitive data types such as numbers and stirngs can store only numbers and strings, respectively, as their values.
+AN **object** is a data type that can take in collections of key-value pairs. A major difference between an object and other data types such as strings and numbers in JavaScript is that an objects can store different types of data as its values. On the other hand, primitive data types such as numbers and stirngs can store only numbers and strings, respectively, as their values.
 
 The **key**, also known as the property name, is usually a string. If any other data type is used as a property name other than strings, it would be converted into a string.
 
