@@ -72,11 +72,22 @@ JavaScript has **primitive (built-in)** and **non-primitive (not built-in)** dat
 * [Array](data-structures/array.md)
 * [Objects](data-structures/objects.md)
 
+### Object Oriented Programming
+**Object Oriented Programming (OOP)** is one of the majore approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.
+
+Object Oriented Programming (OOP) is a programming paradigm fundamental to many prorgamming languages, including Java and C++. The main goal of developing OOP was organizing the structure of the code. Using OOP, you can write more modular and maintainable code. You can associate the code with real-world entities. By using OOP, you make sure that only allowed members of one code is .accessible to others. That makes your code fully secured to unauthenticated access (within the code).
+
+* [Basic JavaScript Object](oop/object.md)
+* [Constructor](oop/constructor.md)
+* [Properties](oop/properties.md)
+
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [ES6 Tutorial](https://www.javascripttutorial.net/es6/)
 * [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+* [Object-oriented programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming)
 * [The Modern JavaScript Tutorial](https://javascript.info/)
 * [JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 * [Data Structures in JavaScript – With Code Examples](https://www.freecodecamp.org/news/data-structures-in-javascript-with-examples/)
+* [OOPS in JavaScript with easy to understand examples](https://dev.to/nehal_mahida/oops-in-javascript-with-easy-to-understand-examples-2ppn)
