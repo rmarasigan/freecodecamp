@@ -80,6 +80,7 @@ Object Oriented Programming (OOP) is a programming paradigm fundamental to many 
 * [Basic JavaScript Object](oop/object.md)
 * [Constructor](oop/constructor.md)
 * [Properties](oop/properties.md)
+* [Inheritance](oop/inheritance.md)
 
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)
