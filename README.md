@@ -114,6 +114,7 @@ Please make sure you already have an AWS Account and AWS CLI configured. If your
    2. [Constructor](/javascript/oop/constructor.md)
    3. [Properties](/javascript/oop/properties.md)
    4. [Inheritance](/javascript/oop/inheritance.md)
+   5. [Mixins, Closure, IIFE](/javascript/oop/mixins-closure-iife.md)
 
 # Reference
 1. [Learn Go Programming by Building 11 Projects](https://www.freecodecamp.org/news/learn-go-by-building-11-projects/)

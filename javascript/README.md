@@ -81,6 +81,7 @@ Object Oriented Programming (OOP) is a programming paradigm fundamental to many 
 * [Constructor](oop/constructor.md)
 * [Properties](oop/properties.md)
 * [Inheritance](oop/inheritance.md)
+* [Mixins, Closure, IIFE](oop/mixins-closure-iife.md)
 
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)

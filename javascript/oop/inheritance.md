@@ -110,6 +110,72 @@ Bird.prototype.constructor = Bird;
 duck.constructor
 ```
 
+### Add methods after inheritance
+A constructor function that inherit its `prototype` object from a supertype constructor functions can still have its own methods in addition to inherited methods. For example, `Bird` is a constructor that inherits its `prototype` from `Animal`:
+
+```javascript
+function Animal() {}
+Animal.prototype.eat = function () {
+  console.log("nom nom nom");
+}
+
+function Bird() {}
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+```
+
+In addition to what is inherited from `Animal`, you want to add behavior that is unique to `Bird` objects. Here, `Bird` will get a `fly()` function. Functions are added to `Bird`'s prototype the same way as any constructor function:
+
+```javascript
+Bird.prototype.fly = function () {
+  console.log("I'm flying!");
+}
+```
+
+Now instances of `Bird` wil have both `eat()` and `fly()` methods:
+
+```javascript
+let duck = new Bird();
+duck.eat; // nom nom nom
+duck.fly; // I'm flying!
+```
+
+### Override Inherited Methods
+Now, you learned that an object can inherit its behavior (methods) from another obejct by referencing its `prototype` object:
+
+```javascript
+child_object.prototype = Object.create(parent_object.prototype);
+```
+
+Then the `child_object` received its own methods by chaining them onto its `prototype`:
+
+```javascript
+child_object.prototype.method_name = function () {...};
+```
+
+It is possible to override an inherited method. It is done the same way - by adding a method to `child_object.prototype` using the same method name as the one to override. Here's an example of `Bird` overriding the `eat()` method inherited from `Animal`:
+
+```javascript
+function Animal() { }
+Animal.prototype.eat = function() {
+  return "nom nom nom";
+};
+
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.eat = function() {
+  return "peck peck peck";
+};
+```
+
+If you have an instance `let duck = new Bird();` and you call `duck.eat()`, this is how JavaScript looks for the method on the `prototype` chain of `duck`:
+
+1. `duck` => Is `eat()` defined here? No.
+2. `Bird` => Is `eat()` defined here? => Yes. Execute it and stop searching.
+3. `Animal` => `eat()` is also defined, but JavaScript stopped searching before reaching this level.
+4. Object => JavaScript stopped searching before reaching this level.
+
 ## Good Read
 * [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 * [JavaScript Prototypes and Inheritance – and Why They Say Everything in JS is an Object](https://www.freecodecamp.org/news/prototypes-and-inheritance-in-javascript/)
