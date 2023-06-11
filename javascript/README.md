@@ -83,6 +83,13 @@ Object Oriented Programming (OOP) is a programming paradigm fundamental to many 
 * [Inheritance](oop/inheritance.md)
 * [Mixins, Closure, IIFE](oop/mixins-closure-iife.md)
 
+### Functional Programming
+**Functional Programming** is another popular approach to software development. In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.
+
+Functional Programming is a paradigm of building computer programs using expressions and functions without mutating state and data. By respecting these restrictions, functional programming aims to write code that is clearer to understand and more bug resistant. This is achieved by avoiding using flow-control statements (`for`, `wihile`, `break`, `continue`, `goto`) which make the code harder to follow. Also functional programming requires us to write pure, deterministic functions which are less likely to be buggy.
+
+* [Functional Programming](functional-programming/introduction.md)
+
 ## Good Read
 * [ECMA-6](https://www.ecma-international.org/publications-and-standards/standards/ecma-6/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -93,3 +100,4 @@ Object Oriented Programming (OOP) is a programming paradigm fundamental to many 
 * [JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 * [Data Structures in JavaScript – With Code Examples](https://www.freecodecamp.org/news/data-structures-in-javascript-with-examples/)
 * [OOPS in JavaScript with easy to understand examples](https://dev.to/nehal_mahida/oops-in-javascript-with-easy-to-understand-examples-2ppn)
+* [Introduction to Functional Programming: JavaScript Paradigms](https://www.toptal.com/javascript/functional-programming-javascript)
