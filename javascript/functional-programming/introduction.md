@@ -148,7 +148,65 @@ Another principle of functional programming is to always declare your dependenci
 
 This can give you more confidence when you alter, remove, or add new code. You would know what you can or cannot change and you can see where the potential traps are. Finally, the function would always produce the same output for the same set of inputs, no matter what part of the code executes it.
 
+## Currying and Partial Application
+**Partial application** and **currying** are mechanisms that we can use for precisely that - to build specialzied versions of functions on top of more generic variations.
+
+The ***arity*** of a function is the number of arguments it requires. ***Currying*** a function means to convert a function of N arity into N functions of arity 1. In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.
+
+Example:
+
+```javascript
+function unCurried(x, y) {
+  return x + y;
+}
+
+function curried(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+
+const curried = x => y => x + y;
+curried(1)(2);  // 3
+```
+
+This is useful in your program if you can't supply all the arguments to a function at one time. You can save each function call into a variable, which will hold the returned function reference that takes the next argument when it's available.
+
+```javascript
+const funcForY = curried(1);
+console.log(funcForY(2));   // 3
+```
+
+Similarly, ***partial application*** can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments.
+
+Example:
+
+```javascript
+function impartial(x, y, z) {
+  return x + y + z;
+}
+
+const partialFn = impartial.bind(this, 1, 2);
+partialFn(10);  // 13
+```
+
+### Partial Application
+> In computer science, **partial application** (or **partial function application**) refers to the process of fixing a number of arguments to a function, producing another function of smaller arity.
+
+***Arity*** just means the number of arguments that a function takes (un-*ary*, bi-*ary*, tern-*ary*, ...). The partial function application is a concept in which a function takes multiple arguments, operates on a few of these arguments, and returns a function with lesser number of input arguments for further usage.
+
+Partial application allows some of the parameters of a function to be filled, and returns a new function asking for the rest of the remaining functions.
+
+### Currying Function
+> In mathematics and computer science, **currying** is the technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument (partial application).
+
+**Currying** is really just automating the manual process with the added convenience that we don't have to use the butt-looking syntax if we supply more than one argument at once. It is a special case of partial function in which, a function takes multiple arguments, but returns a function which takes one argument.
+
+Currying allows a function to be broken up into nested functions, each with some of the arguments from the original signature. This can be useful for binding data to certain arguments of a function for later reusability.
+
 ## Good Read
+* [Currying and Partial Application in JavaScript](https://www.tivix.com/blog/currying-and-partial-application-in-javascript)
 * [Imperative vs Declarative programming in JavaScript](https://medium.com/weekly-webtips/imperative-vs-declarative-programming-in-javascript-25511b90cdb7)
+* [Javascript Closures, Partial functions and Currying](https://aparnajoshi.netlify.app/javascript-closures-partial-functions-and-currying)
 * [What is Functional Programming? A Beginner's JavaScript Guide](https://www.freecodecamp.org/news/functional-programming-in-javascript/)
 * [Master the JavaScript Interview: What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
